@@ -1,0 +1,450 @@
+<html lang="en" class="dark"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyageSync - Intelligent Travel Planning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom scrollbar for phone mockups */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        
+        /* Logo Slider Animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .logo-slider {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: 4rem;
+        }
+        
+        .logo-track {
+            display: flex;
+            gap: 4rem;
+            animation: scroll 30s linear infinite;
+            will-change: transform;
+        }
+        
+        .logo-slider:hover .logo-track {
+            animation-play-state: paused;
+        }
+        
+        .logo-item {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 140px;
+            transition: all 0.3s ease;
+            filter: grayscale(1) opacity(0.5);
+        }
+        
+        .logo-item:hover {
+            filter: grayscale(0) opacity(1);
+            transform: scale(1.1);
+        }
+    </style>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+<body class="bg-[#050505] text-slate-300 font-sans antialiased selection:bg-white/20 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#050505]/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-white">
+                <span class="iconify text-2xl text-white" data-icon="solar:globe-bold-duotone"></span>
+                <span class="text-lg font-medium tracking-tight">VoyageSync</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#" class="text-sm font-medium text-slate-400 hover:text-white transition-colors hidden sm:block">Log in</a>
+                <a href="#" class="text-sm font-medium bg-white text-black px-4 py-2 rounded-full hover:bg-slate-200 transition-colors">Try for free</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <!-- Background Glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="text-center max-w-7xl z-10 mr-auto ml-auto pr-6 pl-6 relative">
+            
+            <!-- Headline Group -->
+            <div class="max-w-4xl mx-auto space-y-8">
+                <h1 class="text-5xl md:text-7xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50 leading-[1.1]">
+                    Turn Confirmation Emails<br>into Seamless Journeys
+                </h1>
+                
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                    Plan trips, sync calendars, and split expenses in one dashboard.
+                    <br class="hidden md:block">
+                    <span class="inline-flex items-center gap-1 mt-2 text-sm text-slate-500 border-b border-dashed border-slate-700 hover:text-slate-300 cursor-pointer transition-colors">
+                        VoyageSync is deterministic, not generative AI. See how it works
+                    </span>
+                </p>
+
+                <div class="flex flex-col items-center gap-4 pt-4">
+                    <button class="group relative inline-flex items-center gap-2 bg-white text-black px-8 py-3.5 rounded-full text-base font-medium hover:bg-slate-200 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:rocket-2-bold-duotone" class="iconify text-xl iconify--solar"><path fill="currentColor" fill-rule="evenodd" d="m15.502 14.367l5.03-5.014c.724-.722 1.087-1.083 1.277-1.543C22 7.351 22 6.84 22 5.82v-.49c0-1.57 0-2.355-.49-2.843C21.022 2 20.235 2 18.659 2h-.489c-1.024 0-1.537 0-1.997.19s-.823.551-1.547 1.274l-5.03 5.014c-.846.844-1.371 1.367-1.574 1.873c-.064.16-.097.317-.097.483c0 .69.557 1.245 1.671 2.356l.15.149l1.754-1.78a.645.645 0 0 1 .919.906l-1.76 1.785l.119.117c1.114 1.11 1.67 1.666 2.362 1.666q.228 0 .447-.081c.519-.191 1.048-.72 1.916-1.585m2.363-5.888c-.652.65-1.71.65-2.363 0a1.66 1.66 0 0 1 0-2.356c.653-.65 1.71-.65 2.363 0s.653 1.705 0 2.356M2.774 12.481a.76.76 0 0 1 0 1.074l-.156.155a.34.34 0 0 0 0 .48a.34.34 0 0 0 .483 0l1.713-1.71a.76.76 0 0 1 1.072 1.075l-1.712 1.71a1.86 1.86 0 0 1-2.629 0a1.857 1.857 0 0 1 0-2.629l.156-.155a.76.76 0 0 1 1.073 0m4.523 4.215c.293.3.288.78-.012 1.073l-1.73 1.692a.759.759 0 0 1-1.061-1.085l1.73-1.692a.76.76 0 0 1 1.073.012m4.184 1.422a.76.76 0 0 1 0 1.074l-1.713 1.71a.34.34 0 0 0 0 .48c.134.133.35.133.484 0l.156-.155A.759.759 0 0 1 11.48 22.3l-.155.155a1.86 1.86 0 0 1-2.63 0a1.857 1.857 0 0 1 0-2.629l1.713-1.71a.76.76 0 0 1 1.073.001" clip-rule="evenodd"></path><path fill="currentColor" d="M10.846 5.41L8.658 7.59c-.402.401-.77.769-1.062 1.101a5 5 0 0 0-.532.706l-.022-.021l-.08-.08a4.2 4.2 0 0 0-1.319-.865l-.106-.042l-.325-.13a.658.658 0 0 1-.223-1.077c.963-.96 2.12-2.114 2.679-2.346a2.9 2.9 0 0 1 1.537-.197c.47.07.915.311 1.641.77m3.736 11.484c.176.18.293.306.399.44q.21.268.373.567c.123.223.218.462.408.939c.155.388.67.491.968.193l.073-.072c.963-.96 2.12-2.114 2.353-2.67a2.9 2.9 0 0 0 .197-1.534c-.07-.468-.312-.912-.772-1.636l-2.195 2.189c-.411.41-.789.786-1.13 1.08a5 5 0 0 1-.674.504m-6.896-2.33a.759.759 0 1 0-1.073-1.073L4.47 15.632a.759.759 0 1 0 1.074 1.074zm2.809 2.806a.759.759 0 1 0-1.073-1.073l-2.128 2.127a.76.76 0 0 0 1.074 1.074z" opacity=".5"></path></svg>
+                        <span>Start planning for free</span>
+                    </button>
+                    <p class="text-xs text-slate-600 font-medium">Pro access starting at just $12/mo</p>
+                </div>
+            </div>
+
+            <!-- Product Visualization (Phones) -->
+            <div class="mt-20 relative mx-auto max-w-5xl">
+                <!-- Frame container -->
+                <div class="relative border border-white/10 bg-[#0A0A0A] rounded-[2.5rem] p-8 md:p-16 overflow-hidden">
+                    <!-- Radial gradient background inside frame -->
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900/50 via-[#0A0A0A] to-[#0A0A0A]"></div>
+
+                    <!-- Phones Container -->
+                    <div class="relative h-[400px] md:h-[600px] w-full flex justify-center items-center perspective-[2000px]">
+                        
+                        <!-- Left Phone (Itinerary) -->
+                        <div class="absolute left-1/2 -translate-x-[110%] md:-translate-x-[85%] top-10 w-[280px] md:w-[320px] h-[600px] bg-[#050505] rounded-[2.5rem] border-[6px] border-[#1a1a1a] shadow-2xl shadow-black origin-bottom-right rotate-[-6deg] scale-90 z-10 opacity-60 hover:opacity-100 transition-all duration-500 hover:z-30 hover:scale-100 overflow-hidden">
+                            <!-- UI Content: Itinerary -->
+                            <div class="p-6 h-full flex flex-col">
+                                <div class="flex justify-between items-center mb-6">
+                                    <span class="text-lg font-semibold text-white">Itinerary</span>
+                                    <div class="flex gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:share-bold-duotone" class="iconify text-slate-500 iconify--solar"><path fill="currentColor" fill-rule="evenodd" d="M13.803 5.333c0-1.84 1.5-3.333 3.348-3.333A3.34 3.34 0 0 1 20.5 5.333c0 1.841-1.5 3.334-3.349 3.334a3.35 3.35 0 0 1-2.384-.994l-4.635 3.156a3.34 3.34 0 0 1-.182 1.917l5.082 3.34a3.35 3.35 0 0 1 2.12-.753a3.34 3.34 0 0 1 3.348 3.334C20.5 20.507 19 22 17.151 22a3.34 3.34 0 0 1-3.348-3.333a3.3 3.3 0 0 1 .289-1.356L9.05 14a3.35 3.35 0 0 1-2.202.821A3.34 3.34 0 0 1 3.5 11.487a3.34 3.34 0 0 1 3.348-3.333c1.064 0 2.01.493 2.623 1.261l4.493-3.059a3.3 3.3 0 0 1-.161-1.023" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                </div>
+                                
+                                <!-- Timeline -->
+                                <div class="space-y-6 relative pl-4 border-l border-slate-800">
+                                    <!-- Item 1 -->
+                                    <div class="relative">
+                                        <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-white ring-4 ring-black"></div>
+                                        <div class="mb-1 flex justify-between text-xs text-slate-400 font-medium">
+                                            <span>1 Nov, Sat</span>
+                                            <span>10:45 AM</span>
+                                        </div>
+                                        <div class="bg-slate-900/50 p-3 rounded-xl border border-white/5">
+                                            <div class="text-sm text-white font-medium">Flight to Narita (NRT)</div>
+                                            <div class="text-xs text-slate-500 mt-1">JL 005 • Seat 4A • On Time</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Item 2 -->
+                                    <div class="relative">
+                                        <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-slate-600 ring-4 ring-black"></div>
+                                        <div class="mb-1 flex justify-between text-xs text-slate-400 font-medium">
+                                            <span>1 Nov, Sat</span>
+                                            <span>03:00 PM</span>
+                                        </div>
+                                        <div class="bg-slate-900/50 p-3 rounded-xl border border-white/5">
+                                            <div class="text-sm text-white font-medium">Check-in: Aman Tokyo</div>
+                                            <div class="text-xs text-slate-500 mt-1">Otemachi Tower • Conf #8829</div>
+                                            <div class="flex gap-2 mt-3">
+                                                <button class="flex-1 bg-white/10 py-1.5 rounded text-[10px] text-white hover:bg-white/20">Map</button>
+                                                <button class="flex-1 bg-white/10 py-1.5 rounded text-[10px] text-white hover:bg-white/20">Call</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Phone (Expenses) -->
+                        <div class="absolute left-1/2 translate-x-[10%] md:translate-x-[-15%] top-10 w-[280px] md:w-[320px] h-[600px] bg-[#050505] rounded-[2.5rem] border-[6px] border-[#1a1a1a] shadow-2xl shadow-black origin-bottom-left rotate-[6deg] scale-90 z-10 opacity-60 hover:opacity-100 transition-all duration-500 hover:z-30 hover:scale-100 overflow-hidden">
+                            <!-- UI Content: Expenses -->
+                            <div class="p-6 h-full flex flex-col">
+                                <div class="flex justify-between items-center mb-8">
+                                    <span class="text-white text-sm" data-icon="solar:arrow-left-linear"></span>
+                                    <span class="text-sm font-medium text-white">New Expense</span>
+                                    <span class="w-4"></span>
+                                </div>
+
+                                <div class="space-y-6">
+                                    <div class="">
+                                        <label class="text-xs text-slate-500 font-medium uppercase tracking-wider">Amount</label>
+                                        <div class="flex items-baseline gap-2 border-b border-slate-700 pb-2 mt-1">
+                                            <span class="text-lg text-slate-400">¥</span>
+                                            <span class="text-3xl text-white font-medium">12,500</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="">
+                                        <label class="text-xs text-slate-500 font-medium uppercase tracking-wider">Category</label>
+                                        <div class="mt-3 flex gap-3 overflow-x-auto no-scrollbar">
+                                            <div class="flex flex-col items-center gap-2 min-w-[60px]">
+                                                <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center">
+                                                    <span class="iconify text-lg" data-icon="solar:dining-bold"></span>
+                                                </div>
+                                                <span class="text-[10px] text-white">Food</span>
+                                            </div>
+                                            <div class="flex flex-col items-center gap-2 min-w-[60px] opacity-50">
+                                                <div class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:bus-bold" class="iconify text-lg iconify--solar"><path fill="currentColor" fill-rule="evenodd" d="M12 2C8.229 2 6.343 2 5.172 3.172C4.108 4.235 4.01 5.886 4 9H3a1 1 0 0 0-1 1v1a1 1 0 0 0 .4.8L4 13c.01 3.114.108 4.765 1.172 5.828c.242.243.514.435.828.587V21a1 1 0 0 0 1 1h1.5a1 1 0 0 0 1-1v-1.018C10.227 20 11.054 20 12 20s1.773 0 2.5-.018V21a1 1 0 0 0 1 1H17a1 1 0 0 0 1-1v-1.585a3 3 0 0 0 .828-.587C19.892 17.765 19.991 16.114 20 13l1.6-1.2a1 1 0 0 0 .4-.8v-1a1 1 0 0 0-1-1h-1c-.01-3.114-.108-4.765-1.172-5.828C17.657 2 15.771 2 12 2M5.5 9.5c0 1.414 0 2.121.44 2.56c.439.44 1.146.44 2.56.44h7c1.414 0 2.121 0 2.56-.44c.44-.439.44-1.146.44-2.56V7c0-1.414 0-2.121-.44-2.56C17.622 4 16.915 4 15.5 4h-7c-1.414 0-2.121 0-2.56.44C5.5 4.878 5.5 5.585 5.5 7zm.75 6.5a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H7a.75.75 0 0 1-.75-.75m11.5 0a.75.75 0 0 0-.75-.75h-1.5a.75.75 0 0 0 0 1.5H17a.75.75 0 0 0 .75-.75" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                                <span class="text-[10px] text-slate-400">Transport</span>
+                                            </div>
+                                            <div class="flex flex-col items-center gap-2 min-w-[60px] opacity-50">
+                                                <div class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:ticket-bold" class="iconify text-lg iconify--solar"><path fill="currentColor" fill-rule="evenodd" d="M14.008 19.003L14.014 17a1.001 1.001 0 0 1 2.005 0v1.977c0 .481 0 .722.154.87c.155.147.39.137.863.117c1.863-.079 3.008-.33 3.814-1.136c.81-.806 1.061-1.951 1.14-3.817c.015-.37.023-.556-.046-.679c-.07-.123-.345-.277-.897-.586a1.999 1.999 0 0 1 0-3.492c.552-.308.828-.463.897-.586s.061-.308.045-.679c-.078-1.866-.33-3.01-1.139-3.817c-.877-.876-2.155-1.097-4.322-1.153a.497.497 0 0 0-.51.497V7a1.001 1.001 0 0 1-2.005 0l-.007-2.501a.5.5 0 0 0-.5-.499H9.994c-3.78 0-5.67 0-6.845 1.172c-.81.806-1.061 1.951-1.14 3.817c-.015.37-.023.556.046.679c.07.123.345.278.897.586a1.999 1.999 0 0 1 0 3.492c-.552.309-.828.463-.897.586s-.061.308-.045.678c.078 1.867.33 3.012 1.139 3.818C4.324 20 6.214 20 9.995 20h3.01c.472 0 .707 0 .854-.146s.148-.38.149-.851M16.018 13v-2a1.001 1.001 0 0 0-2.005 0v2a1.002 1.002 0 0 0 2.006 0" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                                <span class="text-[10px] text-slate-400">Activity</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="text-xs text-slate-500 font-medium uppercase tracking-wider">Split With</label>
+                                        <div class="mt-2 flex -space-x-2">
+                                            <div class="w-8 h-8 rounded-full bg-indigo-500 border-2 border-black flex items-center justify-center text-[10px] text-white font-bold">JM</div>
+                                            <div class="w-8 h-8 rounded-full bg-emerald-500 border-2 border-black flex items-center justify-center text-[10px] text-white font-bold">SK</div>
+                                            <div class="w-8 h-8 rounded-full bg-slate-800 border-2 border-black flex items-center justify-center text-slate-400 text-xs">+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-auto">
+                                    <button class="w-full bg-white text-black py-3 rounded-xl font-medium text-sm">Save Expense</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Center Phone (Dashboard) -->
+                        <div class="absolute left-1/2 -translate-x-1/2 top-0 w-[300px] md:w-[340px] h-[620px] bg-[#050505] rounded-[3rem] border-[8px] border-[#1a1a1a] shadow-[0_0_60px_-15px_rgba(255,255,255,0.1)] z-20 overflow-hidden">
+                            <!-- Notch -->
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-[#1a1a1a] rounded-b-2xl z-30"></div>
+                            
+                            <!-- UI Content: Main -->
+                            <div class="h-full flex flex-col relative">
+                                <!-- Header Image Area -->
+                                <div class="h-[55%] relative">
+                                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover opacity-80" alt="Japan">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent"></div>
+                                    
+                                    <!-- Top Nav on Image -->
+                                    <div class="absolute top-10 left-6 right-6 flex justify-between items-center">
+                                        <div class="flex flex-col">
+                                            <span class="text-xs font-medium text-white/80 uppercase tracking-wider">Current Trip</span>
+                                            <div class="flex items-center gap-1 text-white">
+                                                <span class="text-sm font-semibold">Elite Member</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:star-bold" class="iconify text-[10px] text-amber-400 iconify--solar"><path fill="currentColor" d="M9.153 5.408C10.42 3.136 11.053 2 12 2s1.58 1.136 2.847 3.408l.328.588c.36.646.54.969.82 1.182s.63.292 1.33.45l.636.144c2.46.557 3.689.835 3.982 1.776c.292.94-.546 1.921-2.223 3.882l-.434.507c-.476.557-.715.836-.822 1.18c-.107.345-.071.717.001 1.46l.066.677c.253 2.617.38 3.925-.386 4.506s-1.918.051-4.22-1.009l-.597-.274c-.654-.302-.981-.452-1.328-.452s-.674.15-1.328.452l-.596.274c-2.303 1.06-3.455 1.59-4.22 1.01c-.767-.582-.64-1.89-.387-4.507l.066-.676c.072-.744.108-1.116 0-1.46c-.106-.345-.345-.624-.821-1.18l-.434-.508c-1.677-1.96-2.515-2.941-2.223-3.882S3.58 8.328 6.04 7.772l.636-.144c.699-.158 1.048-.237 1.329-.45s.46-.536.82-1.182z"></path></svg>
+                                            </div>
+                                        </div>
+                                        <button class="w-8 h-8 rounded-full bg-white/10 backdrop-blur flex items-center justify-center text-white hover:bg-white/20 transition">
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:bell-bold" class="iconify iconify--solar"><path fill="currentColor" d="M8.352 20.242A4.63 4.63 0 0 0 12 22a4.63 4.63 0 0 0 3.648-1.758a27.2 27.2 0 0 1-7.296 0M18.75 9v.704c0 .845.24 1.671.692 2.374l1.108 1.723c1.011 1.574.239 3.713-1.52 4.21a25.8 25.8 0 0 1-14.06 0c-1.759-.497-2.531-2.636-1.52-4.21l1.108-1.723a4.4 4.4 0 0 0 .693-2.374V9c0-3.866 3.022-7 6.749-7s6.75 3.134 6.75 7"></path></svg>
+                                        </button>
+                                    </div>
+
+                                    <!-- Trip Title on Image -->
+                                    <div class="absolute bottom-8 left-6 right-6">
+                                        <h3 class="text-2xl font-semibold text-white leading-tight mb-1">Kyoto, Osaka &amp; Tokyo</h3>
+                                        <div class="flex items-center gap-2 text-xs text-gray-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:calendar-bold" class="iconify iconify--solar"><path fill="currentColor" d="M7.75 2.5a.75.75 0 0 0-1.5 0v1.58c-1.44.115-2.384.397-3.078 1.092c-.695.694-.977 1.639-1.093 3.078h19.842c-.116-1.44-.398-2.384-1.093-3.078c-.694-.695-1.639-.977-3.078-1.093V2.5a.75.75 0 0 0-1.5 0v1.513C15.585 4 14.839 4 14 4h-4c-.839 0-1.585 0-2.25.013z"></path><path fill="currentColor" fill-rule="evenodd" d="M2 12c0-.839 0-1.585.013-2.25h19.974C22 10.415 22 11.161 22 12v2c0 3.771 0 5.657-1.172 6.828S17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172S2 17.771 2 14zm15 2a1 1 0 1 0 0-2a1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2a1 1 0 0 0 0 2m-4-5a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-6-3a1 1 0 1 0 0-2a1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2a1 1 0 0 0 0 2" clip-rule="evenodd"></path></svg>
+                                            <span>Nov 1 - Nov 14 • 14 Days</span>
+                                        </div>
+                                        <!-- Avatars -->
+                                        <div class="flex -space-x-2 mt-4">
+                                            <img src="https://i.pravatar.cc/100?img=3" class="w-6 h-6 rounded-full border border-black">
+                                            <img src="https://i.pravatar.cc/100?img=5" class="w-6 h-6 rounded-full border border-black">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Action Grid -->
+                                <div class="flex-1 px-6 pb-6 -mt-4 relative z-10">
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <button class="bg-[#1A1A1A] p-4 rounded-2xl border border-white/5 flex flex-col items-start gap-2 group hover:bg-[#222] transition">
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:map-point-bold-duotone" class="iconify text-xl text-indigo-400 iconify--solar"><path fill="currentColor" d="M12 2c-4.418 0-8 4.003-8 8.5c0 4.462 2.553 9.312 6.537 11.174a3.45 3.45 0 0 0 2.926 0C17.447 19.812 20 14.962 20 10.5C20 6.003 16.418 2 12 2" opacity=".5"></path><path fill="currentColor" d="M12 12.5a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5"></path></svg>
+                                            <span class="text-sm font-medium text-slate-200">Itinerary</span>
+                                        </button>
+                                        <button class="bg-[#1A1A1A] p-4 rounded-2xl border border-white/5 flex flex-col items-start gap-2 group hover:bg-[#222] transition">
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:wallet-bold-duotone" class="iconify text-xl text-emerald-400 iconify--solar"><path fill="currentColor" d="M5.75 7a.75.75 0 0 0 0 1.5h4a.75.75 0 0 0 0-1.5z"></path><path fill="currentColor" fill-rule="evenodd" d="M21.188 8.004q-.094-.005-.2-.004h-2.773C15.944 8 14 9.736 14 12s1.944 4 4.215 4h2.773q.106.001.2-.004c.923-.056 1.739-.757 1.808-1.737c.004-.064.004-.133.004-.197V9.938c0-.064 0-.133-.004-.197c-.069-.98-.885-1.68-1.808-1.737m-3.217 5.063c.584 0 1.058-.478 1.058-1.067c0-.59-.474-1.067-1.058-1.067s-1.06.478-1.06 1.067c0 .59.475 1.067 1.06 1.067" clip-rule="evenodd"></path><path fill="currentColor" d="M21.14 8.002c0-1.181-.044-2.448-.798-3.355a4 4 0 0 0-.233-.256c-.749-.748-1.698-1.08-2.87-1.238C16.099 3 14.644 3 12.806 3h-2.112C8.856 3 7.4 3 6.26 3.153c-1.172.158-2.121.49-2.87 1.238c-.748.749-1.08 1.698-1.238 2.87C2 8.401 2 9.856 2 11.694v.112c0 1.838 0 3.294.153 4.433c.158 1.172.49 2.121 1.238 2.87c.749.748 1.698 1.08 2.87 1.238c1.14.153 2.595.153 4.433.153h2.112c1.838 0 3.294 0 4.433-.153c1.172-.158 2.121-.49 2.87-1.238q.305-.308.526-.66c.45-.72.504-1.602.504-2.45l-.15.001h-2.774C15.944 16 14 14.264 14 12s1.944-4 4.215-4h2.773q.079 0 .151.002" opacity=".5"></path></svg>
+                                            <span class="text-sm font-medium text-slate-200">Expenses</span>
+                                        </button>
+                                        <button class="bg-[#1A1A1A] p-4 rounded-2xl border border-white/5 flex flex-col items-start gap-2 group hover:bg-[#222] transition">
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:passport-bold-duotone" class="iconify text-xl text-amber-400 iconify--solar"><path fill="currentColor" d="M9.75 13a2.25 2.25 0 1 1 4.5 0a2.25 2.25 0 0 1-4.5 0"></path><path fill="currentColor" fill-rule="evenodd" d="M4 18.694v-14a1 1 0 0 0 1 1h12a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3M8.25 13a3.75 3.75 0 1 1 7.5 0a3.75 3.75 0 0 1-7.5 0m1 6a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75" clip-rule="evenodd"></path><path fill="currentColor" d="M18 4v1.865c-.313-.11-.65-.17-1-.17H5a1 1 0 0 1-1-1v-.072c0-.533.392-.985.92-1.06L15.717 2.02A2 2 0 0 1 18 4" opacity=".5"></path></svg>
+                                            <span class="text-sm font-medium text-slate-200">Docs</span>
+                                        </button>
+                                        <button class="bg-[#1A1A1A] p-4 rounded-2xl border border-white/5 flex flex-col items-start gap-2 group hover:bg-[#222] transition">
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:gallery-bold-duotone" class="iconify text-xl text-pink-400 iconify--solar"><path fill="currentColor" d="M18 8a2 2 0 1 1-4 0a2 2 0 0 1 4 0"></path><path fill="currentColor" fill-rule="evenodd" d="M11.943 1.25h.114c2.309 0 4.118 0 5.53.19c1.444.194 2.584.6 3.479 1.494c.895.895 1.3 2.035 1.494 3.48c.19 1.411.19 3.22.19 5.529v.088c0 1.909 0 3.471-.104 4.743c-.104 1.28-.317 2.347-.795 3.235q-.314.586-.785 1.057c-.895.895-2.035 1.3-3.48 1.494c-1.411.19-3.22.19-5.529.19h-.114c-2.309 0-4.118 0-5.53-.19c-1.444-.194-2.584-.6-3.479-1.494c-.793-.793-1.203-1.78-1.42-3.006c-.215-1.203-.254-2.7-.262-4.558Q1.25 12.792 1.25 12v-.058c0-2.309 0-4.118.19-5.53c.194-1.444.6-2.584 1.494-3.479c.895-.895 2.035-1.3 3.48-1.494c1.411-.19 3.22-.19 5.529-.19m-5.33 1.676c-1.278.172-2.049.5-2.618 1.069c-.57.57-.897 1.34-1.069 2.619c-.174 1.3-.176 3.008-.176 5.386q0 .793.002 1.495c.008 1.874.05 3.246.238 4.303c.184 1.035.498 1.7 1.005 2.207c.57.57 1.34.897 2.619 1.069c1.3.174 3.008.176 5.386.176s4.086-.002 5.386-.176c1.279-.172 2.05-.5 2.62-1.069c.21-.21.381-.442.524-.707c.332-.616.523-1.44.621-2.645s.099-2.707.099-4.653c0-2.378-.002-4.086-.176-5.386c-.172-1.279-.5-2.05-1.069-2.62c-.57-.569-1.34-.896-2.619-1.068c-1.3-.174-3.008-.176-5.386-.176s-4.086.002-5.386.176" clip-rule="evenodd"></path><path fill="currentColor" d="m20.607 19.146l-2.83-2.547a3 3 0 0 0-3.732-.225l-.299.21a2 2 0 0 1-2.564-.222l-4.29-4.29a2.3 2.3 0 0 0-3.14-.104l-1.002.876l.002.65c.008 1.875.05 3.247.238 4.304c.185 1.035.498 1.7 1.005 2.207c.57.57 1.34.897 2.619 1.069c1.3.174 3.008.176 5.386.176s4.087-.002 5.387-.176c1.278-.172 2.049-.5 2.618-1.069a3 3 0 0 0 .602-.859" opacity=".4"></path></svg>
+                                            <span class="text-sm font-medium text-slate-200">Photos</span>
+                                        </button>
+                                    </div>
+
+                                    <!-- Bottom Nav -->
+                                    <div class="mt-auto pt-6 flex justify-around items-center text-slate-500 border-t border-white/5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:home-bold" class="iconify text-xl text-white iconify--solar"><defs><path id="IconifyId19aab05a40066a0270" fill="currentColor" d="M10.75 9.5a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0"></path></defs><path fill="currentColor" d="M18.5 3H16a.5.5 0 0 0-.5.5v.059l3.5 2.8V3.5a.5.5 0 0 0-.5-.5"></path><use href="#IconifyId19aab05a40066a0270" fill-rule="evenodd" clip-rule="evenodd"></use><path fill="currentColor" fill-rule="evenodd" d="m20.75 10.96l.782.626a.75.75 0 0 0 .936-1.172l-8.125-6.5a3.75 3.75 0 0 0-4.686 0l-8.125 6.5a.75.75 0 0 0 .937 1.172l.781-.626v10.29H2a.75.75 0 0 0 0 1.5h20a.75.75 0 0 0 0-1.5h-1.25zM9.25 9.5a2.75 2.75 0 1 1 5.5 0a2.75 2.75 0 0 1-5.5 0m2.8 3.75c.664 0 1.237 0 1.696.062c.492.066.963.215 1.345.597s.531.853.597 1.345c.058.43.062.96.062 1.573v4.423h-1.5V17c0-.728-.002-1.2-.048-1.546c-.044-.325-.114-.427-.172-.484s-.159-.128-.484-.172c-.347-.046-.818-.048-1.546-.048s-1.2.002-1.546.048c-.325.044-.427.115-.484.172s-.128.159-.172.484c-.046.347-.048.818-.048 1.546v4.25h-1.5v-4.3c0-.664 0-1.237.062-1.696c.066-.492.215-.963.597-1.345s.854-.531 1.345-.597c.459-.062 1.032-.062 1.697-.062z" clip-rule="evenodd"></path><use href="#IconifyId19aab05a40066a0270" fill-rule="evenodd" clip-rule="evenodd"></use></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:magnifer-linear" class="iconify text-xl hover:text-white transition iconify--solar"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11.5" cy="11.5" r="9.5"></circle><path stroke-linecap="round" d="M18.5 18.5L22 22"></path></g></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:user-circle-linear" class="iconify text-xl hover:text-white transition iconify--solar"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="3"></circle><circle cx="12" cy="12" r="10"></circle><path stroke-linecap="round" d="M17.97 20c-.16-2.892-1.045-5-5.97-5s-5.81 2.108-5.97 5"></path></g></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto mt-12 text-center px-4">
+                <p class="text-lg text-slate-500">
+                    Planning trips, organizing travel documents, and managing shared expenses can be overwhelming. VoyageSync simplifies this process by consolidating everything into one intuitive platform.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Logos -->
+    <section class="py-16 border-y border-white/5 bg-white/[0.01] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-sm font-medium text-slate-500 mb-10 flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:star-bold-duotone" class="iconify iconify--solar"><path fill="currentColor" d="M18.483 16.767A8.5 8.5 0 0 1 8.118 7.081a1 1 0 0 1-.113.097c-.28.213-.63.292-1.33.45l-.635.144c-2.46.557-3.69.835-3.983 1.776c-.292.94.546 1.921 2.223 3.882l.434.507c.476.557.715.836.822 1.18c.107.345.071.717-.001 1.46l-.066.677c-.253 2.617-.38 3.925.386 4.506s1.918.052 4.22-1.009l.597-.274c.654-.302.981-.452 1.328-.452s.674.15 1.329.452l.595.274c2.303 1.06 3.455 1.59 4.22 1.01c.767-.582.64-1.89.387-4.507z"></path><path fill="currentColor" d="m9.153 5.408l-.328.588c-.36.646-.54.969-.82 1.182q.06-.045.113-.097a8.5 8.5 0 0 0 10.366 9.686l-.02-.19c-.071-.743-.107-1.115 0-1.46c.107-.344.345-.623.822-1.18l.434-.507c1.677-1.96 2.515-2.941 2.222-3.882c-.292-.941-1.522-1.22-3.982-1.776l-.636-.144c-.699-.158-1.049-.237-1.33-.45c-.28-.213-.46-.536-.82-1.182l-.327-.588C13.58 3.136 12.947 2 12 2s-1.58 1.136-2.847 3.408" opacity=".5"></path></svg> 
+                Featured in
+            </p>
+            
+            <!-- Logo Slider -->
+            <div class="logo-slider">
+                <div class="logo-track">
+                    <!-- First set of logos -->
+                    <div class="logo-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="simple-icons:techcrunch" class="iconify text-4xl text-[#00D41C] iconify--simple-icons"><path fill="currentColor" d="M0 6v4h4v8h4v-8h4V6Zm12 4v8h12v-4h-8v-4zm4 0h8V6h-8z"></path></svg>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:theverge"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:wired"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:fastcompany"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-[#FF6154]" data-icon="simple-icons:producthunt"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-[#1DA1F2]" data-icon="simple-icons:twitter"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:forbes"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:bloomberg"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:businessinsider"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-[#E60023]" data-icon="simple-icons:thenextweb"></span>
+                    </div>
+                    
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="logo-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="simple-icons:techcrunch" class="iconify text-4xl text-[#00D41C] iconify--simple-icons"><path fill="currentColor" d="M0 6v4h4v8h4v-8h4V6Zm12 4v8h12v-4h-8v-4zm4 0h8V6h-8z"></path></svg>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:theverge"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:wired"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:fastcompany"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-[#FF6154]" data-icon="simple-icons:producthunt"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-[#1DA1F2]" data-icon="simple-icons:twitter"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:forbes"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:bloomberg"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-white" data-icon="simple-icons:businessinsider"></span>
+                    </div>
+                    <div class="logo-item">
+                        <span class="iconify text-4xl text-[#E60023]" data-icon="simple-icons:thenextweb"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-flex xl:bg-clip-text xl:text-transparent text-xs font-medium bg-[conic-gradient(from_180deg,var(--tw-gradient-stops))] from-lime-400 via-lime-600 to-lime-400 border-white/10 border rounded-full mb-4 px-3 py-1 gap-x-1.5 gap-y-1.5 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:magic-stick-3-bold-duotone" class="iconify iconify--solar"><path fill="currentColor" d="M3.845 3.845a2.883 2.883 0 0 0 0 4.077L5.432 9.51c.012-.014.555.503.568.49l4-4c.013-.013-.504-.556-.49-.568L7.922 3.845a2.883 2.883 0 0 0-4.077 0m1.288 11.462a.483.483 0 0 1 .9 0l.157.4a.48.48 0 0 0 .272.273l.398.157a.486.486 0 0 1 0 .903l-.398.158a.48.48 0 0 0-.272.273l-.157.4a.483.483 0 0 1-.9 0l-.157-.4a.48.48 0 0 0-.272-.273l-.398-.158a.486.486 0 0 1 0-.903l.398-.157a.48.48 0 0 0 .272-.274z" opacity=".5"></path><path fill="currentColor" d="M19.967 9.13a.483.483 0 0 1 .9 0l.156.399c.05.125.148.224.273.273l.398.158a.486.486 0 0 1 0 .902l-.398.158a.5.5 0 0 0-.273.273l-.156.4a.483.483 0 0 1-.9 0l-.157-.4a.5.5 0 0 0-.272-.273l-.398-.158a.486.486 0 0 1 0-.902l.398-.158a.5.5 0 0 0 .272-.273z" opacity=".2"></path><path fill="currentColor" d="M16.1 2.307a.483.483 0 0 1 .9 0l.43 1.095a.48.48 0 0 0 .272.274l1.091.432a.486.486 0 0 1 0 .903l-1.09.432a.5.5 0 0 0-.273.273L17 6.81a.483.483 0 0 1-.9 0l-.43-1.095a.5.5 0 0 0-.273-.273l-1.09-.432a.486.486 0 0 1 0-.903l1.09-.432a.5.5 0 0 0 .273-.274z" opacity=".7"></path><path fill="currentColor" d="M10.568 6.49c-.012.014-.555-.503-.568-.49l-4 4c-.013.013.504.556.49.568l9.588 9.587a2.883 2.883 0 1 0 4.078-4.077z"></path></svg>
+                    What's Inside
+                </div>
+                <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-4">Everything you need to travel lightly.</h2>
+                <p class="text-lg text-slate-400">From parsing PDF tickets to calculating who owes who.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Feature 1 -->
+                <div class="group relative bg-[#0A0A0A] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+                    <div class="w-12 h-12 bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:inbox-archive-bold-duotone" class="iconify text-2xl iconify--solar"><path fill="currentColor" d="M3.464 20.536C4.93 22 7.286 22 12 22s7.071 0 8.535-1.465C22 19.072 22 16.714 22 12s0-7.071-1.465-8.536C19.072 2 16.714 2 12 2S4.929 2 3.464 3.464C2 4.93 2 7.286 2 12s0 7.071 1.464 8.535" opacity=".5"></path><path fill="currentColor" d="M5 8.5v-1A1.5 1.5 0 0 1 6.5 6h11A1.5 1.5 0 0 1 19 7.5v1a2.5 2.5 0 0 0-1.5-.5h-11c-.563 0-1.082.186-1.5.5m0 3v-1A1.5 1.5 0 0 1 6.5 9h11a1.5 1.5 0 0 1 1.5 1.5v1a2.5 2.5 0 0 0-1.5-.5h-11a2.5 2.5 0 0 0-1.5.5M20.75 15a.75.75 0 0 0-.75-.75h-1.02v-1A1.5 1.5 0 0 0 17.5 12h-11a1.5 1.5 0 0 0-1.48 1.25v1H4a.75.75 0 0 0 0 1.5h2.301c.87 0 1.098.013 1.293.092l.061.027c.19.09.355.25.943.889l.036.038l.075.083c.438.476.783.852 1.236 1.08q.126.063.258.113c.474.18.985.179 1.631.178h.218c.611 0 1.094.001 1.547-.161q.126-.045.248-.103c.434-.205.775-.547 1.207-.98l.075-.074l.23-.23c.621-.621.793-.775.991-.857s.428-.095 1.307-.095H20a.75.75 0 0 0 .75-.75"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Smart Inbox Parsing</h3>
+                    <p class="text-lg text-slate-500 leading-relaxed">Simply forward emails from airlines and hotels. We extract the details instantly using deterministic parsers.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group relative bg-[#0A0A0A] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:card-transfer-bold-duotone" class="iconify text-2xl iconify--solar"><path fill="currentColor" d="m22 12.818l-.409-.409a2.25 2.25 0 0 0-3.182 0l-.801.801a2.251 2.251 0 0 0-4.358.79v1.764a2.25 2.25 0 0 0-1.341 3.827l.409.409H10c-3.771 0-5.657 0-6.828-1.172S2 15.771 2 12c0-.442.002-1.608.004-2H22c.002.392 0 1.558 0 2z" opacity=".5"></path><path fill="currentColor" d="M5.25 16a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75M9.995 4h4.01c3.781 0 5.672 0 6.846 1.116c.846.803 1.083 1.96 1.149 3.884v1H2V9c.066-1.925.303-3.08 1.149-3.884C4.323 4 6.214 4 9.995 4m9.475 9.47a.75.75 0 0 1 1.06 0l2 2a.75.75 0 1 1-1.06 1.06l-.72-.72V20a.75.75 0 0 1-1.5 0v-4.19l-.72.72a.75.75 0 1 1-1.06-1.06z"></path><path fill="currentColor" fill-rule="evenodd" d="M15.5 13.25a.75.75 0 0 1 .75.75v4.19l.72-.72a.75.75 0 1 1 1.06 1.06l-2 2a.75.75 0 0 1-1.06 0l-2-2a.75.75 0 1 1 1.06-1.06l.72.72V14a.75.75 0 0 1 .75-.75" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Expense Splitting</h3>
+                    <p class="text-lg text-slate-500 leading-relaxed">Track shared costs in multiple currencies. We handle the math and settle debts automatically.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group relative bg-[#0A0A0A] border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="solar:cloud-download-bold-duotone" class="iconify text-2xl iconify--solar"><path fill="currentColor" d="M6.5 18v-.09c0-.865 0-1.659.087-2.304c.095-.711.32-1.463.938-2.08c.618-.619 1.37-.844 2.08-.94c.646-.086 1.44-.086 2.306-.086h.178c.866 0 1.66 0 2.305.087c.711.095 1.463.32 2.08.938c.619.618.844 1.37.94 2.08c.085.637.086 1.416.086 2.267c2.573-.55 4.5-2.812 4.5-5.52c0-2.47-1.607-4.572-3.845-5.337C17.837 4.194 15.415 2 12.476 2C9.32 2 6.762 4.528 6.762 7.647c0 .69.125 1.35.354 1.962a4.4 4.4 0 0 0-.83-.08C3.919 9.53 2 11.426 2 13.765S3.919 18 6.286 18z" opacity=".5"></path><path fill="currentColor" fill-rule="evenodd" d="M12 22c-1.886 0-2.828 0-3.414-.586S8 19.886 8 18s0-2.828.586-3.414S10.114 14 12 14s2.828 0 3.414.586S16 16.114 16 18s0 2.828-.586 3.414S13.886 22 12 22m1.805-3.084l-1.334 1.333a.667.667 0 0 1-.942 0l-1.334-1.333a.667.667 0 1 1 .943-.943l.195.195v-1.946a.667.667 0 0 1 1.334 0v1.946l.195-.195a.667.667 0 0 1 .943.943" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Offline Access</h3>
+                    <p class="text-lg text-slate-500 leading-relaxed">Access tickets, maps, and reservation numbers without data roaming. Your trip lives on your device.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer class="border-t border-white/5 py-12 text-center">
+        <div class="flex justify-center items-center gap-2 mb-6">
+             <span class="iconify text-xl text-white" data-icon="solar:globe-bold-duotone"></span>
+             <span class="text-white font-semibold tracking-tight">VoyageSync</span>
+        </div>
+        <p class="text-sm text-slate-600">© 2024 VoyageSync Inc. Crafted for explorers.</p>
+    </footer>
+
+
+</body></html>

@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-slate-300 antialiased;
+  }
+}
+
+/* Custom scrollbar for phone mockups */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Logo Slider Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.logo-slider {
+  overflow: hidden;
+  user-select: none;
+}
+
+.logo-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.logo-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem; /* Adjust spacing between logos */
+  transition: all 0.3s ease;
+  filter: grayscale(1) opacity(0.5);
+}
+
+.logo-item:hover {
+  filter: grayscale(0) opacity(1);
+  transform: scale(1.1);
+}
